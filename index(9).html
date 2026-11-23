@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>मिरासी बाज़ार | अपने समाज का अपना बाज़ार</title>
+<meta name="description" content="मिरासी समाज के लिए पुराने सामान की खरीद-बिक्री। मोबाइल, बाइक, मोटर, फर्नीचर और बहुत कुछ, सीधे अपने समाज के लोगों से।">
+<meta property="og:title" content="मिरासी बाज़ार | अपने समाज का अपना बाज़ार">
+<meta property="og:description" content="अपना पुराना सामान मुफ़्त में पोस्ट कीजिए, या अपने समाज से सस्ता सामान खरीदिए।">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛍️%3C/text%3E%3C/svg%3E">
+<style>
+:root{--g:#0f766e;--g2:#0b5a54;--y:#f59e0b;--bg:#f6f7f8;--c:#fff;--t:#14231f;--m:#5b6b66;--b:#dbe5e2}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1715;--c:#16231f;--t:#e8f1ee;--m:#97aaa4;--b:#26382f}}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--t);padding-bottom:env(safe-area-inset-bottom)}
+header{position:sticky;top:0;z-index:5;background:var(--c);border-bottom:1px solid var(--b);padding:calc(.7rem + env(safe-area-inset-top)) 1rem .7rem}
+.hd{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+header h1{font-size:1.25rem;color:var(--g);line-height:1.2}header p{color:var(--m);font-size:.78rem}
+.w{max-width:1000px;margin:auto;padding:0 .9rem}
+.bar{max-width:1000px;margin:.8rem auto;padding:0 .9rem}
+.fk{display:flex;align-items:center;gap:.6rem;width:100%;padding:.72rem .9rem;border:1px solid var(--b);border-radius:10px;background:var(--c);color:var(--m);font-size:.95rem;cursor:text;font-family:inherit}
+.sr{position:fixed;inset:0;background:var(--bg);z-index:20;display:none;flex-direction:column}
+.sr.on{display:flex}
+.st{display:flex;align-items:center;gap:.4rem;padding:calc(.6rem + env(safe-area-inset-top)) .7rem .6rem;background:var(--c);border-bottom:1px solid var(--b)}
+.bk{border:0;background:none;color:var(--t);font-size:1.4rem;padding:.2rem .5rem;cursor:pointer}
+.si{flex:1;display:flex;align-items:center;background:var(--bg);border-radius:10px;padding-left:.8rem}
+.si input{flex:1;border:0;background:none;padding:.7rem 0;font-size:1rem;color:var(--t);outline:0;min-width:0;font-family:inherit}
+.si button{border:0;background:var(--m);color:var(--c);width:20px;height:20px;border-radius:50%;font-size:.65rem;margin:0 .6rem;cursor:pointer;flex:none}
+#sbody{flex:1;overflow:auto;padding:.5rem .9rem 1rem;max-width:700px;width:100%;margin:auto}
+.rw{display:flex;gap:.7rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--b);cursor:pointer}
+.rw img,.rw .ph{width:56px;height:56px;aspect-ratio:auto;border-radius:8px;font-size:1.4rem;flex:none;object-fit:cover}
+.rc{padding:.7rem 0;border-bottom:1px solid var(--b);cursor:pointer}
+.sh3{font-size:.8rem;color:var(--m);margin:.8rem 0 .1rem;font-weight:600}
+.btn{background:var(--y);color:#222;border:0;border-radius:12px;padding:.8rem 1rem;font-weight:700;font-size:1rem;cursor:pointer}
+.btn.g{background:var(--g);color:#fff}.btn.w2{background:#25d366;color:#fff}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding:.2rem 0 .8rem}
+.chip{white-space:nowrap;border:1px solid var(--b);background:var(--c);color:var(--t);border-radius:99px;padding:.4rem .9rem;cursor:pointer;font-size:.9rem}
+.chip.on{background:var(--g);color:#fff;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--c);border:1px solid var(--b);border-radius:10px;overflow:hidden;cursor:pointer}
+.card img,.ph{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--b)}
+.ph{display:grid;place-items:center;font-size:2.5rem}
+.cb{padding:.6rem}.pr{font-weight:800;color:var(--g);font-size:1.05rem}
+.ti{font-size:.92rem;margin:.1rem 0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.mt{color:var(--m);font-size:.78rem}
+.pend{background:var(--y);color:#222;font-size:.72rem;padding:.1rem .4rem;border-radius:6px}
+.note{background:#fff7e0;color:#6b4b00;border-radius:10px;padding:.6rem .8rem;font-size:.85rem;margin-bottom:.8rem}
+.empty{text-align:center;color:var(--m);padding:2.5rem 1rem}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;justify-content:center;z-index:30}
+.ov.on{display:flex}
+.sh{background:var(--c);width:100%;max-width:560px;max-height:92dvh;overflow:auto;border-radius:18px 18px 0 0;padding:1rem 1rem calc(1rem + env(safe-area-inset-bottom))}
+.sh h2{font-size:1.2rem;margin-bottom:.6rem}
+.x{float:right;border:0;background:var(--b);color:var(--t);width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer}
+label{display:block;font-size:.85rem;color:var(--m);margin:.6rem 0 .2rem}
+.sh input,.sh select,.sh textarea{width:100%;padding:.7rem;border:1px solid var(--b);border-radius:10px;font-size:1rem;background:var(--bg);color:var(--t);font-family:inherit}
+.pics{display:flex;gap:.5rem;overflow-x:auto;margin-bottom:.6rem}
+.pics img{height:230px;border-radius:10px;max-width:90%}
+.row{display:flex;gap:.5rem;margin-top:.8rem}.row a,.row button{flex:1;text-align:center;text-decoration:none}
+footer{text-align:center;color:var(--m);font-size:.8rem;padding:1.5rem 1rem 2rem}
+footer a{color:var(--m);cursor:default}
+</style>
+</head>
+<body>
+<header><div class="hd"><div><h1>मिरासी बाज़ार</h1><p>अपने समाज का अपना बाज़ार</p></div><button class="btn g" id="sell">+ बेचें</button></div></header>
+<div class="bar"><button class="fk" id="sb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>सामान ढूँढिए…</button></div>
+<main class="w">
+<div id="demo" class="note" hidden>डेमो मोड: अभी पोस्ट सिर्फ़ इसी फ़ोन में दिख रहे हैं। सबको दिखाने के लिए Firebase जोड़ना होगा (फाइल के ऊपर CFG में)।</div>
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid"></div>
+<p class="empty" id="empty" hidden>अभी कोई सामान नहीं है। पहला पोस्ट आप कीजिए! 🙂</p>
+</main>
+<footer>
+<p><b>नियम:</b> सिर्फ़ मिरासी समाज के लोग पोस्ट करें। चोरी का या गैरकानूनी सामान मना है।</p>
+<p style="margin-top:.4rem">लेन-देन खरीदार और विक्रेता के बीच सीधा होता है। सामान देखकर और जाँचकर ही पैसे दीजिए, वेबसाइट किसी लेन-देन की ज़िम्मेदार नहीं है।</p>
+<p style="margin-top:.6rem">बनाया: <a id="adm">पन्ने खान, केसूरी</a></p>
+</footer>
+
+<div class="sr" id="sr"><div class="st"><button class="bk" id="sbk" aria-label="वापस">←</button><div class="si"><input id="q" placeholder="सामान ढूँढिए…" autocomplete="off" enterkeyhint="search"><button id="qx" hidden aria-label="हटाएँ">✕</button></div></div><div id="sbody"></div></div>
+
+<div class="ov" id="ov1"><div class="sh"><button class="x" data-c>✕</button><h2>अपना सामान बेचिए</h2>
+<form id="f" onsubmit="return false">
+<label>आपका नाम</label><input id="fn" required maxlength="40">
+<label>मोबाइल नंबर (10 अंक)</label><input id="fm" type="tel" inputmode="numeric" maxlength="10" required>
+<label>सामान का नाम</label><input id="ft" required maxlength="80">
+<label>कीमत (₹)</label><input id="fp" type="number" inputmode="numeric" required min="0">
+<label>श्रेणी</label><select id="fc"></select>
+<label>गाँव / शहर</label><input id="fv" required maxlength="40">
+<label>विवरण (हालत, कितना पुराना)</label><textarea id="fd" rows="3" maxlength="400"></textarea>
+<label>फोटो (ज़्यादा से ज़्यादा 3)</label><input id="fi" type="file" accept="image/*" multiple>
+<div class="row"><button class="btn g" id="fs">पोस्ट करें</button></div>
+<p class="mt" id="fm2" style="margin-top:.5rem"></p></form></div></div>
+
+<div class="ov" id="ov2"><div class="sh"><button class="x" data-c>✕</button><div id="dt"></div></div></div>
+
+<script type="module">
+const CFG={apiKey:"AIzaSyD-ElLSBQh8h6e3XTOfV23PdApdGMlG4M0",authDomain:"ai-character-khan.firebaseapp.com",projectId:"ai-character-khan",storageBucket:"ai-character-khan.firebasestorage.app",messagingSenderId:"430700095077",appId:"1:430700095077:web:1b36b10a5c775ac756888c"};
+const CLOUD="lfsdugn3",PRESET="khan_upload",COL="mirasi_posts";
+const th=(u,s)=>String(u).includes("/upload/")?u.replace("/upload/","/upload/"+s+"/"):u;
+const CATS=["मोबाइल","बाइक/मोटर","फर्नीचर","इलेक्ट्रॉनिक्स","खेती का सामान","अन्य"],$=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let items=[],cat="",q="",adm=false,db,F,A,au;
+const ls=()=>{try{return JSON.parse(localStorage.mb||"[]")}catch(e){return[]}};
+async function init(){
+ if(CFG){const v="10.12.5",u="https://www.gstatic.com/firebasejs/"+v+"/firebase-",a=await import(u+"app.js");
+  F=await import(u+"firestore.js");A=await import(u+"auth.js");const app=a.initializeApp(CFG);db=F.getFirestore(app);au=A.getAuth(app)}
+ else $("#demo").hidden=false;
+ await load()}
+async function load(){
+ if(CFG){try{const c=F.collection(db,COL),s=await F.getDocs(c);items=s.docs.map(d=>({id:d.id,...d.data()}))}catch(e){items=[]}}
+ else items=ls();
+ items.sort((a,b)=>b.t-a.t);render()}
+function ago(t){const d=Math.floor((Date.now()-t)/864e5);return d<1?"आज":d+" दिन पहले"}
+function render(){
+ const l=items.filter(p=>!cat||p.cat===cat);
+ $("#grid").innerHTML=l.map(p=>`<div class="card" data-id="${esc(p.id)}">${p.img&&p.img[0]?`<img src="${esc(th(p.img[0],"w_400,h_400,c_fill,q_auto,f_auto"))}" alt="" loading="lazy">`:'<div class="ph">📦</div>'}<div class="cb"><div class="pr">₹${esc(p.price)}</div><div class="ti">${esc(p.title)}</div><div class="mt">${esc(p.village)} · ${ago(p.t)}</div></div></div>`).join("");
+ $("#empty").hidden=l.length>0;
+ $("#chips").innerHTML=["सभी",...CATS].map(c=>`<button class="chip${(c==="सभी"?"":c)===cat?" on":""}" data-k="${c==="सभी"?"":esc(c)}">${c}</button>`).join("")}
+function show(id){
+ const p=items.find(x=>x.id===id);if(!p)return;const n=String(p.mobile).replace(/\D/g,"");
+ $("#dt").innerHTML=`${(p.img||[]).length?`<div class="pics">${p.img.map(i=>`<img src="${esc(th(i,"w_900,q_auto,f_auto"))}" alt="">`).join("")}</div>`:""}<div class="pr" style="font-size:1.5rem">₹${esc(p.price)}</div><h2>${esc(p.title)}</h2><p class="mt">${esc(p.cat)} · ${esc(p.village)} · ${ago(p.t)}</p><p style="margin:.7rem 0;white-space:pre-wrap">${esc(p.desc)}</p><p class="mt">विक्रेता: ${esc(p.name)}</p><div class="row"><a class="btn g" href="tel:+91${n}">📞 कॉल</a><a class="btn w2" href="https://wa.me/91${n}?text=${encodeURIComponent("नमस्ते, मिरासी बाज़ार पर आपका '"+p.title+"' देखा।")}" target="_blank" rel="noopener">WhatsApp</a></div>${adm?`<div class="row"><button class="btn" data-a="del" style="background:#dc2626;color:#fff">🗑 हटाएँ</button></div>`:""}`;
+ $("#dt").dataset.id=id;$("#ov2").classList.add("on")}
+async function act(a,id){
+ if(a==="del"&&!confirm("यह पोस्ट हटाएँ?"))return;
+ if(CFG){const r=F.doc(db,COL,id);a==="ok"?await F.updateDoc(r,{ok:true}):await F.deleteDoc(r)}
+ else{let l=ls();l=a==="ok"?l.map(p=>p.id===id?{...p,ok:true}:p):l.filter(p=>p.id!==id);localStorage.mb=JSON.stringify(l)}
+ $("#ov2").classList.remove("on");load()}
+const rs=f=>new Promise((res,rej)=>{const i=new Image();i.onerror=rej;i.onload=()=>{const k=Math.min(1,1200/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*k;c.height=i.height*k;c.getContext("2d").drawImage(i,0,0,c.width,c.height);
+ c.toBlob(async b=>{try{const d=new FormData();d.append("file",b);d.append("upload_preset",PRESET);const r=await fetch("https://api.cloudinary.com/v1_1/"+CLOUD+"/image/upload",{method:"POST",body:d}),j=await r.json();j.secure_url?res(j.secure_url):rej(new Error("upload"))}catch(e){rej(e)}},"image/jpeg",.82)};i.src=URL.createObjectURL(f)});
+$("#fs").onclick=async()=>{
+ const m=$("#fm2"),g=i=>$(i).value.trim(),mob=g("#fm");
+ if(!g("#fn")||!g("#ft")||!g("#fp")||!g("#fv"))return m.textContent="कृपया सारी जानकारी भरिए।";
+ if(!/^[6-9]\d{9}$/.test(mob))return m.textContent="सही 10 अंकों का मोबाइल नंबर डालिए।";
+ $("#fs").disabled=true;m.textContent="पोस्ट हो रहा है…";
+ try{const img=await Promise.all([...$("#fi").files].slice(0,3).map(rs));
+  const p={name:g("#fn"),mobile:mob,title:g("#ft"),price:+g("#fp"),cat:$("#fc").value,village:g("#fv"),desc:g("#fd"),img,t:Date.now(),ok:true};
+  if(CFG)await F.addDoc(F.collection(db,COL),p);else{p.id=""+p.t;localStorage.mb=JSON.stringify([p,...ls()])}
+  $("#f").reset();m.textContent="";$("#ov1").classList.remove("on");
+  alert("पोस्ट हो गया!");load()}
+ catch(e){m.textContent="पोस्ट नहीं हो पाया, दोबारा कोशिश कीजिए।"}
+ $("#fs").disabled=false};
+$("#adm").onclick=async()=>{
+ if(adm)return;
+ if(CFG){const e=prompt("Admin ईमेल"),p=e&&prompt("पासवर्ड");if(!p)return;
+  try{await A.signInWithEmailAndPassword(au,e,p)}catch(x){return alert("लॉगिन नहीं हुआ")}}
+ adm=true;load()};
+$("#fc").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
+$("#sell").onclick=()=>$("#ov1").classList.add("on");
+const rec=()=>{try{return JSON.parse(localStorage.mr||"[]")}catch(e){return[]}};
+const row=p=>`<div class="rw" data-id="${esc(p.id)}">${p.img&&p.img[0]?`<img src="${esc(th(p.img[0],"w_400,h_400,c_fill,q_auto,f_auto"))}" alt="">`:'<div class="ph">📦</div>'}<div><div class="pr">₹${esc(p.price)}</div><div class="ti">${esc(p.title)}</div><div class="mt">${esc(p.village)} · ${ago(p.t)}</div></div></div>`;
+function sres(){
+ const b=$("#sbody");$("#qx").hidden=!q;
+ if(!q){const r=rec();b.innerHTML=(r.length?'<div class="sh3">हाल की खोज</div>'+r.map(x=>`<div class="rc" data-r="${esc(x)}">🕘 ${esc(x)}</div>`).join(""):"")+'<div class="sh3">श्रेणियाँ</div>'+CATS.map(c=>`<div class="rc" data-r="${esc(c)}">${esc(c)}</div>`).join("");return}
+ const l=items.filter(p=>(p.title+" "+p.desc+" "+p.village+" "+p.cat).toLowerCase().includes(q));
+ b.innerHTML=l.length?l.map(row).join(""):`<p class="empty">"${esc($("#q").value)}" के लिए कुछ नहीं मिला।</p>`}
+$("#sb").onclick=()=>{$("#sr").classList.add("on");sres();$("#q").focus()};
+$("#sbk").onclick=()=>$("#sr").classList.remove("on");
+$("#q").oninput=e=>{q=e.target.value.trim().toLowerCase();sres()};
+$("#qx").onclick=()=>{$("#q").value="";q="";sres();$("#q").focus()};
+$("#sbody").onclick=e=>{const r=e.target.closest("[data-r]");if(r){$("#q").value=r.dataset.r;q=r.dataset.r.toLowerCase();sres();return}
+ const c=e.target.closest("[data-id]");if(c){const v=$("#q").value.trim();if(v)localStorage.mr=JSON.stringify([v,...rec().filter(x=>x!==v)].slice(0,5));show(c.dataset.id)}};
+$("#chips").onclick=e=>{const b=e.target.closest(".chip");if(b){cat=b.dataset.k;render()}};
+$("#grid").onclick=e=>{const c=e.target.closest(".card");if(c)show(c.dataset.id)};
+$("#dt").onclick=e=>{const b=e.target.closest("[data-a]");if(b)act(b.dataset.a,$("#dt").dataset.id)};
+document.querySelectorAll(".ov").forEach(o=>o.onclick=e=>{if(e.target===o||e.target.dataset.c!==undefined)o.classList.remove("on")});
+init();
+</script>
+</body>
+</html>
